@@ -14,9 +14,13 @@
 ┌──────────────┐                         ┌──────────────────────┐
 │  OpenAI API  │ ──────────────────────> │ Cache & Serve User   │
 └──────────────┘                         └──────────────────────┘
-📋 Environment ConfigurationThe application requires specific runtime configurations to control testing constraints and target evaluation sizes. Configure your environment before execution:DEMO_QUERIES_FIRST4: Set to "1" to force a benchmark run across 4 un-labeled demo query cases.MAX_SEED_ROWS: The total number of openFDA raw medical entries to embed and push into the local Redis storage cache layer.HF_TOKEN: (Optional) Your Hugging Face Hub token to gain access to higher rate limits and expedited embedding generation downloads.
 
-💻 Quick Start1. PrerequisitesEnsure you have Python 3.10+ installed and a running instance of Redis Server locally or via Docker.bashdocker run -d -p 6379:6379 -p 8001:8001 redis/redis-stack:latest
+📋 Environment Configuration
+
+The application requires specific runtime configurations to control testing constraints and target evaluation sizes. Configure your environment before execution:DEMO_QUERIES_FIRST4: Set to "1" to force a benchmark run across 4 un-labeled demo query cases.MAX_SEED_ROWS: The total number of openFDA raw medical entries to embed and push into the local Redis storage cache layer.HF_TOKEN: (Optional) Your Hugging Face Hub token to gain access to higher rate limits and expedited embedding generation downloads.
+
+💻 Quick Start1. 
+Prerequisites Ensure you have Python 3.10+ installed and a running instance of Redis Server locally or via Docker.bashdocker run -d -p 6379:6379 -p 8001:8001 redis/redis-stack:latest
 Use code with caution.2. Run the BenchmarksActivate your virtual environment and initialize the pipeline application script:powershell# Windows PowerShell Execution
 $env:DEMO_QUERIES_FIRST4="1"
 $env:MAX_SEED_ROWS="200"
