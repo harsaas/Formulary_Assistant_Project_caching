@@ -1,0 +1,65 @@
+# Pinned to versions verified on Python 3.10
+# NOTE: llama-index 0.10.x has an import-time typing issue on Python 3.10
+# in some environments; this repo includes a guarded workaround in sitecustomize.py.
+
+deeplake==3.9.27
+nest-asyncio==1.6.0
+python-dotenv==1.0.1
+
+# UI
+streamlit==1.57.0
+
+# Orchestration
+langgraph==1.1.10
+
+llama-index==0.10.68
+llama-index-readers-github==0.1.9
+llama-index-readers-wikipedia==0.1.4
+llama-index-vector-stores-deeplake==0.1.6
+llama-index-vector-stores-pinecone==0.8.0
+pinecone==7.3.0
+
+# Needed by llama-index-llms-openai in this dependency set
+openai==1.40.0
+httpx==0.27.2
+cohere==5.5.8
+wikipedia==1.4.0
+pdf2image==1.17.0
+html2text==2024.2.26
+
+# RAGAS (compatible with OpenAI 1.x and this LlamaIndex pin)
+ragas==0.2.15
+diskcache==5.6.3
+
+# ragas deps (pinned for reproducibility)
+langchain==1.2.15
+langchain-core==1.3.2
+langchain-community==0.4.1
+langchain-openai==1.2.1
+datasets==4.8.4
+huggingface-hub==1.12.0
+tiktoken==0.7.0
+transformers==4.42.3
+torch==2.3.1
+numpy==1.26.4
+trl==0.9.4
+peft==0.11.1
+wandb==0.17.3
+accelerate==0.31.0
+tqdm==4.66.4
+neural-compressor===2.6
+onnx===1.16.1
+pandas==2.2.2
+scipy==1.14.0
+scikit-learn==1.5.2
+email-validator==2.3.0
+
+# NOTE: These are generally not supported on Windows (and may require CUDA/toolchains).
+deepspeed==0.14.4; sys_platform != "win32"
+bitsandbytes==0.43.1; sys_platform != "win32"
+
+# Semantic cache / vector search
+sentence-transformers==5.5.1
+redisvl==0.18.2
+redis==7.4.0
+rapidfuzz==3.14.5
