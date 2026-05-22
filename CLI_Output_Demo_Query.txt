@@ -1,0 +1,42 @@
+(.venv-1) PS C:\Users\harip\OneDrive\Desktop\scemantic_search_cache\Formulary_Assistant_Project_caching> $env:DEMO_QUERIES_FIRST4="1"; $env:MAX_SEED_ROWS="200"; python.exe -m src.app
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights: 100%|█████████████████████████| 103/103 [00:00<00:00, 4054.94it/s]
+Loading weights: 100%|█████████████████████████| 105/105 [00:00<00:00, 5263.37it/s]
+DEMO_QUERIES_FIRST4=1 -> running evaluation on 4 demo queries (no ground_truth labels).
+Using limits: MAX_SEED_ROWS=200, MAX_VALIDATION_ROWS=2 | seed_rows=200, validation_rows=4
+====================================================================================================
+Delete old cache contents...
+ Generating embeddings for 200 real openFDA entries...
+Redis Caching Layers built successfully.
+----------------------------------------------------------------------------------------------------
+Case 1
+Query : Can you give me a substitute option for basic care daytime severe cold and flu because it's non-covered?
+Cache : HIT (Semantic Cache Hit (Verified Score: 4.60))
+Cache latency (ms): 97.82
+----------------------------------------------------------------------------------------------------
+Case 2
+Query : Prior authorization criteria for Ozempic 1mg injection?
+Cache : MISS (Cache Miss (Low Similarity: 0.39)) -> LLM
+Cache latency (ms): 47.67
+LLM latency (ms): 2197.77
+LLM tokens used: 145
+LLM cost (USD): $0.000059
+----------------------------------------------------------------------------------------------------
+Case 3
+Query : Alternative for Sidlenafil?
+Cache : HIT (Fuzzy Cache Hit)
+Cache latency (ms): 0.00
+----------------------------------------------------------------------------------------------------
+Case 4
+Query : Need a noncovered substitute for basic care daytime severe cold and flu solution
+Cache : HIT (Semantic Cache Hit (Verified Score: 5.12))
+Cache latency (ms): 65.38
+
+Operational Performance Metrics:
+Total Cache Hits Requests Blocked Locally (Saved Money) : 3
+Total LLM Misses Requests Pushed to OpenAI (Paid Route): 1
+Total Tokens Consumed: 145
+Total Financial Cost (USD): $5.91e-05
+Average Cache Latency (ms): 54.40 ms
+Average LLM Latency (ms): 2197.77 ms
+(.venv-1) PS C:\Users\harip\OneDrive\Desktop\scemantic_search_cache\Formulary_Assistant_Project_caching> 
